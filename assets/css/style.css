@@ -1,0 +1,99 @@
+/**
+
+* Author: Estilos generales para la pagina de actividades
+* 
+*/
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+}
+p {
+  padding: 0
+}
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+.nav-item a {
+  transition: 0.5s;
+  color: #fff !important;
+  font-size: 1.3rem;
+
+}
+.nav-item a:hover {
+  color: #09AD8B!important;
+
+}
+a {
+  transition: 0.5s;
+  color: #006ba1;
+}
+
+a:hover {
+  transition: 0.5s;
+  color: #0099CC;
+}
+
+.main-header {
+  position:relative;
+  background-image: url(../css/biblioteca-pe.jpg);
+  background-size: cover;
+  min-height: 500px;
+}
+
+.background-overlay {
+  background: rgba(48, 51, 107, 1.0,1);
+  top:0;
+  width: 100%;
+  height: 100%;
+}
+.resaltado {
+  color: #BA1E5A;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.site-footer {
+  background-color: #545454;
+  padding: 0;
+}
+.site-footer h2,
+.site-footer p {
+  color: #fff;
+}
+
+.list-inline li a {
+  padding: 5px;
+  font-size: 2rem;
+
+}
+
+.footer-cuatro a{
+  padding: 5px;
+  font-size: 4rem;
+  color: #98b827;
+}
+.footer-cuatro a:hover{
+  padding: 5px;
+  font-size: 4rem;
+  color: #ff6f61;
+}
+
+.red-inst a{
+  font-size: 1.6rem;
+  color: #006ba1;
+}
+
+.red-inst a:hover {
+  color: #ccc;
+}
+
+.list-inline i {
+  padding: 5px;
+  font-size: 2rem;
+  color: #98b827;
+  /*color: #006ba1;*/
+}
+
+
