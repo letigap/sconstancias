@@ -76,11 +76,6 @@ $dbc = conexion();
 
         if( vacio($FechaEvento) ) {
             $errores['FechaEvento']['obligatorio'] = "La fecha del evento es obligatorio";
-        } elseif(!filter_var($FechaEvento, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => "/^[a-zA-Záéíóú0-9':,-.\s ]+$/i"]])) {
-           //FechaEvento puede tener letras . ' (espacios) - números
-           $errores['FechaEvento'][] = "La fecha no es válida";
-        }elseif (strlen($FechaEvento) > 200) {
-            $errores['FechaEvento'][] = "La fecha puede tener máximo 200 caracteres";
         }
 
         if( !vacio($CoordinadorEvento) && (!filter_var($CoordinadorEvento, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => "/^[a-zA-ZáéíóúAÉÍÓÚÑñ.\s ]+$/i"]])) ) {   
@@ -209,7 +204,7 @@ foreach($resultado as $row):
         <div class="form-row">
                 <div class="form-group col-md-10">
                     <label for="FechaEvento">Fecha de realización </label>
-                    <input type="text" class="form-control <?= (isset($errores['FechaEvento'])) ? 'is-invalid' : '' ?>" name="FechaEvento" id="FechaEvento" placeholder="La fecha de realización del evento" value="<?php echo $row['FechaEvento']; ?>">
+                    <input type="date" class="form-control <?= (isset($errores['FechaEvento'])) ? 'is-invalid' : '' ?>" name="FechaEvento" id="FechaEvento" placeholder="La fecha de realización del evento" value="<?php echo $row['FechaEvento']; ?>">
                     <div class="invalid-feedback"><span>
                         <?php
                         if(isset($errores['FechaEvento']) && !empty($errores['FechaEvento'])){

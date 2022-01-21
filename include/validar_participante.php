@@ -62,15 +62,6 @@ if (isset($_POST['agregar']) && !empty($_POST['agregar'])) {
         $errores['IdEvento']['obligatorio'] = "El evento es obligatorio";
     }
 
-    echo "<script>
-    sessionStorage.setItem('RfcParticipante','".$RfcParticipante."'); 
-    sessionStorage.setItem('NombreParticipante',".$NombreParticipante.");
-    sessionStorage.setItem('ApellidopParticipante','".$ApellidopParticipante."');
-    sessionStorage.setItem('ApellidomParticipante','".$ApellidomParticipante."');
-    sessionStorage.setItem('EmailParticipante','".$EmailParticipante."'); 
-    sessionStorage.setItem('IdEvento','".$IdEvento."');  
-                                    
-     </script>";
 
     if (empty($errores)) {
 

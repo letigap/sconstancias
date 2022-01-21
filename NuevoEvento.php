@@ -1,13 +1,13 @@
  <?php
-// //Inicio la session
-//      session_start();
+//Inicio la session
+    //  session_start();
 
-//      //COMPRUEBA QUE EL USUARIO ESTA AUTENTIFICADO
-//       if (!$_SESSION['email']) {
-//               //si no existe, envío a la página de autentificación
-//               header("Location: login.php");
-//               exit();
-//       } 
+    //  //COMPRUEBA QUE EL USUARIO ESTA AUTENTIFICADO
+    //   if (!$_SESSION['email']) {
+    //           //si no existe, envío a la página de autentificación
+    //           header("Location: login.php");
+    //           exit();
+    //   } 
 require_once("include/header.php");
 include_once("include/dbConexion.php");
 include_once("include/validar_evento.php");
@@ -135,14 +135,6 @@ $tipos = getDatos($sql);
             </div>
     </form>
 </main>
-<script type="text/javascript">
-          
-           document.querySelector('#IdTipoEvento').value=sessionStorage.getItem('IdTipoEvento'); 
-           document.querySelector('#NombreEvento').value=sessionStorage.getItem('NombreEvento'); 
-           document.querySelector('#ProfesorEvento').value=sessionStorage.getItem('ProfesorEvento'); 
-           document.querySelector('#ProcedenciaProfeEvento').value=sessionStorage.getItem('ProcedenciaProfeEvento'); 
-           document.querySelector('#FechaEvento').value=sessionStorage.getItem('FechaEvento'); 
-           document.querySelector('#CoordinadorEvento').value=sessionStorage.getItem('CoordinadorEvento'); 
- </script>         
+
 <?php
 require_once ("include/footer.php");

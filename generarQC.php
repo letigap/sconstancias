@@ -5,8 +5,8 @@
    $sql = "SELECT `evento`.*, `tipoevento`.`NombreTipoEvento`, `participante`.*
          FROM `evento` 
          INNER JOIN `tipoevento` ON `evento`.`IdTipoEvento` = `tipoevento`.`IdTipoEvento`,`participante`
-         WHERE RfcParticipante = '$valor'";
-                 echo "<script> alert('".$valor."'); </script>";
+         WHERE RfcParticipante = '$rfc' and idEvento = '$eventoid'";
+
     $result = mysqli_query ($dbc, $query);
     $row = $result->fetch_array(MYSQLI_ASSOC);
   //$row = getDatos($sql); Para poder usarla es necesario recorrer el arreglo con un foreach ya que la funcion regresa un arreglo
@@ -31,12 +31,12 @@ $mpdf -> WriteHTML('<body style="border:0; background: transparent url(images/fi
 $mpdf-> WriteHTML('
 
   <p class="nombre">'.$row['NombreParticipante'].' '.$row['ApellidopParticipante'].' '.$row['ApellidomParticipante'].'</p>
-  <p class="center">Por su asistencia al III '.$row['NombreTipoEvento'].':</p>
+  <p class="center">Por su asistencia '.$row['NombreEvento'].' Internacional Virtual:</p>
   <p class="evento">"'.$row['NombreEvento'].'"</p>
 <!--  <p align="center">A cargo de: '.$row['ProfesorEvento'].''.$row['ProcedenciaProfeEvento'].'.</p>-->
 
 		
-  <p align="center">Que se llevó a cabo los días '.$row['FechaEvento'].'.</p>
+  <p align="center">'.$row['FechaEvento'].'.</p>
   <p align="center">Ciudad Universitaria, Ciudad de México.</p>
   <div class="posicion-num-certificado">
     <p class="right small">Número de certificado:</p>
@@ -49,7 +49,7 @@ $mpdf-> WriteHTML('
 ');
 $mpdf -> WriteHTML('</body>');
 $mpdf -> Output('Const-'.$row['IdEvento'].'-'.$row['RfcParticipante'].'.pdf', 'F');
-$mpdf->Output('CONST_2021/Const-'.$row['IdEvento'].''.$row['RfcParticipante'].'.pdf', \Mpdf\Output\Destination::FILE);
+$mpdf->Output('CONST_'.$fecha.'/Const-'.$row['IdEvento'].''.$row['RfcParticipante'].'.pdf', \Mpdf\Output\Destination::FILE);
 // $mpdf->Output('CONST_2021/Const-'.$row['IdEvento'].'-'.$row['RfcParticipante'].'.pdf', \Mpdf\Output\Destination::FILE);
 
 ?>

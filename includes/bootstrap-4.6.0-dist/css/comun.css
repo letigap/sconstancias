@@ -1,0 +1,26 @@
+.titulares {
+    padding: 1rem 2rem;
+     background-color: #20BFF7;
+     color: #EEE;
+   }
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #303130;
+}
+.footer ul{
+ list-style: none;
+}
+.footer a{
+    color:#EEE;
+    text-decoration: none;
+}
+
+.derechos{
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 5px;
+}

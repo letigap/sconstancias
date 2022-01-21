@@ -1,5 +1,5 @@
 <?php
-    // Inicio la session
+    //Inicio la session
     // session_start();
 
     // // //COMPRUEBA QUE EL USUARIO ESTA AUTENTIFICADO
@@ -130,14 +130,6 @@ $eventos = getDatos($sql);
 </div>
 </form>
 </main>
-<script type="text/javascript">
-          
-           document.querySelector('#RfcParticipante').value=sessionStorage.getItem('$RfcParticipante'); 
-           document.querySelector('#NombreParticipante').value=sessionStorage.getItem('NombreParticipante'); 
-           document.querySelector('#ApellidopParticipante').value=sessionStorage.getItem('ApellidopParticipante'); 
-           document.querySelector('#ApellidomParticipante').value=sessionStorage.getItem('ApellidomParticipante'); 
-           document.querySelector('#EmailParticipante').value=sessionStorage.getItem('EmailParticipante'); 
-           document.querySelector('#IdEvento').value=sessionStorage.getItem('IdEvento'); 
- </script>    
+
 <?php
 require_once ("include/footer.php");

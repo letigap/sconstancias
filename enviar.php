@@ -7,15 +7,26 @@ require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 
-include_once("include/dbConexion.php");
-
-$evento = $_GET['evento']; 
-$archivo = $_GET['id'];
-
-$correo = $_GET['correo'];
 $mail = new PHPMailer(true);
 
-try {
+include_once("include/dbConexion.php");
+
+$array = $_GET['keys'];
+$correos = explode(",", $array);
+foreach ($emails as $indice => $valor){
+echo $indice." = ".$valor."<br>";
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// $envio=$_POST['enviados'];
+//         print_r($envio);
+
+// foreach($envio as $llave => $valor) {
+//     echo "el valor es: ".$valor. "<- ";  
+// $archivo = $_GET['id'];
+
+// $correo = $_GET['correo'];
+    $correo="solrac512@gmail.com"
+
+    try {
     //Server settings
     $mail->SMTPDebug = 2;                                       // Enable verbose debug output
     $mail->isSMTP();                                            // Set mailer to use SMTP
@@ -34,19 +45,18 @@ try {
 
     //Recipients
     $mail->setFrom('supervisor@www.depfe.unam.mx', 'Depfe');
-     $mail->addAddress($correo, 'destino');     // Add a recipient
-    // $mail->addAddress($row['EmailParticipante'], 'destino');     // Add a recipient
+    $mail->addAddress($correo, 'destino');     // Add a recipient
     $mail->addAddress('letiga@unam.mx', 'copia');     // Add a recipient
 
     // Attachments
-    // $mail->AddAttachment('CONST_2021/Const-'.$row['IdEvento'].''.$row['RfcParticipante'].'.pdf');
-    $mail->AddAttachment('CONST_2021/Const-'.$evento.''.$archivo.'.pdf');
+    $mail->AddAttachment('CONST_2021/Const-'.$valor.'.pdf');
     //$mail->AddAttachment('enviar.php');
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Constancia de Evento';
     $mail->Body    = 'Para la Divisi&oacute;n de Estudios de Posgrado de la Facultad de Econom&iacute;a de la UNAM, es un gusto dirigirnos</br>
-a usted para agradecer su asistencia al III Seminario "Perspectivas críticas de las Cadenas Globales de Valor".
+a usted para agradecer su asistencia al Seminario en honor de Anthony P. Thirlwall: "Problem&aacute;ticas filos&oacute;ficas y anal&iacute;ticas en el desarrollo econ&oacute;mico de econom&iacute;as estructuralmente restringidas".
+//a usted para agradecer su asistencia al Seminario Internacional: "Econom&iacute;a en Tiempos de Pandemia." 
 </br>
 </br>
 Adjuntamos en este correo su constancia de asistencia y estaremos honrados de poder contar con su presencia en futuros eventos.</br>
@@ -62,4 +72,10 @@ La Divisi&oacute;n de Estudios de Posgrado de la Facultad de Econom&iacute;a-UNA
     echo "Hubo un error al enviar el mensaje. Mailer Error: {$mail->ErrorInfo}";
 }
 
-//  }//termina foreach
+// }//termina foreach
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+}
+
+

@@ -1,7 +1,7 @@
 <?php return ?>
 [database]
 host = localhost
-user = userweb
-clave = P3-coNm1
-dbnombre = dbconstancias
+user = root
+clave = 
+dbnombre = constanciasl
 charset = utf8

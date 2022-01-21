@@ -39,14 +39,17 @@
   <!-- Bootstrap CSS Files -->
   <link href="assets/bootstrap-4.6.0/css/bootstrap.min.css" rel="stylesheet">
  <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+ <link href="assets/css/jquery.multiselect.css" rel="stylesheet">
  
+
   <!-- Archivos CSS, estilos propios -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/animacion.css" rel="stylesheet">
   
 
 </head>
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #003263;">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #006ba1;">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -70,7 +73,10 @@
         <a class="nav-link" href="login.php">Ingreso</a>
       </li>
     </ul>
-    
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="buscar" placeholder="Buscar" aria-label="Buscar  en google">
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
   </div>
 </nav>
   </header>

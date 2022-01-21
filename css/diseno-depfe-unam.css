@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {	
+  background: #CCC;
+  color:#000;  
+  font-family:Georgia, "Times New Roman", Times, serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+.bg-constancia-seminario-solorza-2018{
+	height:1270px;
+	background-image:url(../images/bg-3-firmantes.jpg) ;
+	/*background-size: contain;*/
+	background-position:top left;
+	background-repeat:no-repeat;
+	margin:0 ;
+}
+
+
+
+.center{
+	text-align:center;
+	}
+.right{
+	text-align: right;
+	}
+.small{font-size: .8em;}
+.nombre{
+	text-align:center;
+	padding-top:7cm;
+	font-size:20pt;
+	}
+.evento{
+	 text-align:center;
+	 text-transform: uppercase;
+	 font-size:16pt;
+	}
+
+.posicion-num-certificado {	
+	position: absolute;
+	width: auto;
+	height:auto;
+	bottom: 45px;
+	right: 160px;
+	}
+
+.posicion-qr{
+	position: absolute;
+	width: auto;
+	height:auto;
+	bottom: 25px;
+	right: 69px;
+	}
+
+.qr{width:20mm; height:20mm;}

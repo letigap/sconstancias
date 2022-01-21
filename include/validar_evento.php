@@ -46,8 +46,8 @@ if (isset($_POST['agregar']) && !empty($_POST['agregar'])) {
     } elseif(!filter_var($FechaEvento, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => "/^[a-zA-Záéíóú0-9':,-.\s ]+$/i"]])) {
        //FechaEvento puede tener letras . ' (espacios) - números
        $errores['FechaEvento'][] = "La fecha no es válida";
-    }elseif (strlen($FechaEvento) > 200) {
-        $errores['FechaEvento'][] = "La fecha puede tener máximo 200 caracteres";
+    }elseif (strlen($FechaEvento) > 80) {
+        $errores['FechaEvento'][] = "La fecha puede tener máximo 80 caracteres";
     }
     if( !vacio($CoordinadorEvento) ) {
         if (!filter_var($CoordinadorEvento, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => "/^[a-zA-ZáéíóúAÉÍÓÚÑñ.\s ]+$/i"]])) {
@@ -56,15 +56,6 @@ if (isset($_POST['agregar']) && !empty($_POST['agregar'])) {
         $errores['CoordinadorEvento'][] = "El coordinador del evnento puede tener máximo 300 caracteres";
     }
     }
-    echo "<script>
-    sessionStorage.setItem('IdTipoEvento','".$IdTipoEvento."'); 
-    sessionStorage.setItem('NombreEvento',".$NombreEvento.");
-    sessionStorage.setItem('ProfesorEvento','".$ProfesorEvento."');
-    sessionStorage.setItem('ProcedenciaProfeEvento','".$ProcedenciaProfeEvento."');
-    sessionStorage.setItem('FechaEvento','".$FechaEvento."'); 
-    sessionStorage.setItem('CoordinadorEvento','".$CoordinadorEvento."');  
-                                    
-     </script>";
 
     //Si no hay errores, guardamos el registro en la base de datos
     if (empty($errores)) {
@@ -86,7 +77,7 @@ if (isset($_POST['agregar']) && !empty($_POST['agregar'])) {
                 if (z == true) {
                    location.href='NuevoEvento.php'
                  } else {
-                   location.href='inicio.php'
+                   location.href='index.php'
                 }
                 </script>";
             }else{

@@ -1,14 +1,24 @@
 <?php
 	
-	include_once("include/dbConexion.php");
+	require 'conexion.php';
  
 	$id = $_GET['id'];
-	$dbc = conexion();
-	$sql = "DELETE FROM evento WHERE id = '$id'";
-	$resultado = mysqli_query($dbc,$sql);
-	// $resultado = $mysqli->query($sql);
+
+	$sql = "DELETE FROM participantes WHERE id = '$id'";
+	$resultado = $mysqli->query($sql);
 ?>
- 	<body>
+ 
+<html lang="es">
+	<head>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-theme.css" rel="stylesheet">
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>	
+	</head>
+	
+	<body>
 		<div class="container">
 			<div class="row">
 				<div class="row" style="text-align:center">
@@ -24,4 +34,4 @@
 			</div>
 		</div>
 	</body>
-
+</html>

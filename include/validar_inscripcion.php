@@ -1,7 +1,7 @@
 <?php
 
 $datos = $_POST;
-// print_r($datos);
+ print_r($datos);
 
 
 //SECCION DEL CODIGO PARA PROCESAR EL FORMULARIO

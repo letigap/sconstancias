@@ -1,6 +1,5 @@
 <?php
  session_start();
- 
  $datos = $_POST;
 // print_r($datos);
 $mensaje = '';
@@ -32,7 +31,7 @@ $mensaje = '';
 
     $dbc = mysqli_connect($params['host'], $params['user'], $params['clave'], $params['dbnombre']);
 
-        
+       // $dbc = conexion();
 
        //1.Busco el usuario con ese email en la base de datos
 
