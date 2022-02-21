@@ -41,7 +41,7 @@ $eventos = getDatos($sql);
 <div class="form-row">
 <div class="form-group col-md-10">
     <label for="NombreParticipante">Nombre de Participante</label>
-    <input type="text" class="form-control <?= (isset($errores['NombreParticipante'])) ? 'is-invalid' : '' ?>" name="NombreParticipante" id="NombreParticipante" placeholder="Nombre del participante">
+    <input type="text" class="form-control <?= (isset($errores['NombreParticipante'])) ? 'is-invalid' : '' ?>" name="NombreParticipante" onkeyup="Primera(this);" id="NombreParticipante" placeholder="Nombre del participante">
         <div class="invalid-feedback">
         <span>
          <?php
@@ -130,6 +130,20 @@ $eventos = getDatos($sql);
 </div>
 </form>
 </main>
+<script>
+ function Primera(e){ 
+   str = e.value;
+     e.value = str[0].toUpperCase() + str.slice(1);
+    // for (i = 1; i = str.length; i++){
 
+    // }
+    // may = str[0]t.toUpperCase();
+
+    e.value = str[0].toUpperCase() + str[1].toLowerCase() + str[2].toLowerCase() + str[3].toLowerCase();
+  
+}
+
+</script>
 <?php
+
 require_once ("include/footer.php");
