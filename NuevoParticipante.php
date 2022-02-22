@@ -58,7 +58,7 @@ $eventos = getDatos($sql);
 <div class="form-row">
 <div class="form-group col-md-10">
     <label for="ApellidopParticipante">Apellido Paterno Participante</label>
-    <input type="text" class="form-control <?= (isset($errores['ApellidopParticipante'])) ? 'is-invalid' : '' ?>" name="ApellidopParticipante" id="ApellidopParticipante" placeholder="Apellido Paterno">
+    <input type="text" class="form-control <?= (isset($errores['ApellidopParticipante'])) ? 'is-invalid' : '' ?>" name="ApellidopParticipante" onkeyup="Primera(this);" id="ApellidopParticipante" placeholder="Apellido Paterno">
         <div class="invalid-feedback"><span>
         <?php
             if(isset($errores['ApellidopParticipante']) && !empty($errores['ApellidopParticipante'])){
@@ -130,20 +130,6 @@ $eventos = getDatos($sql);
 </div>
 </form>
 </main>
-<script>
- function Primera(e){ 
-   str = e.value;
-     e.value = str[0].toUpperCase() + str.slice(1);
-    // for (i = 1; i = str.length; i++){
-
-    // }
-    // may = str[0]t.toUpperCase();
-
-    e.value = str[0].toUpperCase() + str[1].toLowerCase() + str[2].toLowerCase() + str[3].toLowerCase();
-  
-}
-
-</script>
 <?php
 
 require_once ("include/footer.php");

@@ -3,5 +3,5 @@
 host = localhost
 user = root
 clave = 
-dbnombre = constanciasl
+dbnombre = constancias
 charset = utf8
