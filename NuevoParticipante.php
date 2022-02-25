@@ -24,7 +24,7 @@ $eventos = getDatos($sql);
 <div class="form-row">
 <div class="form-group col-md-10">
     <label for="RfcParticipante">RFC del participante</label>
-    <input type="text" class="form-control <?= (isset($errores['RfcParticipante'])) ? 'is-invalid' : '' ?>" name="RfcParticipante" id="RfcParticipante" placeholder="RFC del participante">
+    <input type="text" class="form-control <?= (isset($errores['RfcParticipante'])) ? 'is-invalid' : '' ?>" name="RfcParticipante" onkeyup="rfcMayus(this);" id="RfcParticipante" placeholder="RFC del participante">
      <div class="invalid-feedback">
        <span>
         <?php
@@ -74,7 +74,7 @@ $eventos = getDatos($sql);
 <div class="form-row">
 <div class="form-group col-md-10">
     <label for="ApellidomParticipante">Apellido Materno Participante</label>
-    <input type="text" class="form-control <?= (isset($errores['ApellidomParticipante'])) ? 'is-invalid' : '' ?>" name="ApellidomParticipante" id="ApellidomParticipante" placeholder="Apellido Materno">
+    <input type="text" class="form-control <?= (isset($errores['ApellidomParticipante'])) ? 'is-invalid' : '' ?>" name="ApellidomParticipante" onkeyup="Primera(this);" id="ApellidomParticipante" placeholder="Apellido Materno">
         <div class="invalid-feedback"><span>
         <?php
             if(isset($errores['ApellidomParticipante']) && !empty($errores['ApellidomParticipante'])){
