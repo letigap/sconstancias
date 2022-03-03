@@ -9,10 +9,10 @@ require 'PHPMailer/SMTP.php';
 
 include_once("include/dbConexion.php");
 
-$idevento = $_GET['idevento']; 
-$id = $_GET['id'];
+// $idevento = $_GET['idevento']; 
+// $id = $_GET['id'];
 
-$correo = $_GET['correo'];
+// $correo = $_GET['correo'];
 $mail = new PHPMailer(true);
 
 try {
@@ -34,13 +34,13 @@ try {
 
     //Recipients
     $mail->setFrom('supervisor@www.depfe.unam.mx', 'Depfe');
-     $mail->addAddress($correo, 'destino');     // Add a recipient
+     $mail->addAddress($fromemail, 'destino');     // Add a recipient
     // $mail->addAddress($row['EmailParticipante'], 'destino');     // Add a recipient
     $mail->addAddress('letiga@unam.mx', 'copia');     // Add a recipient
 
     // Attachments
     // $mail->AddAttachment('CONST_2022/Const-'.$row['IdEvento'].''.$row['RfcParticipante'].'.pdf');
-    $mail->AddAttachment('CONST_2022/Const-'.$idevento.''.$id.'.pdf');
+    $mail->AddAttachment('CONST_2022/Const-'.$eventoid.''.$rfc.'.pdf');
     //$mail->AddAttachment('enviar.php');
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML

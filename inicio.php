@@ -123,7 +123,7 @@ $result = mysqli_query ($dbc, $query);
                 <td><?= $evento['ProfesorEvento']; ?></td>
 		 <td><a href="ActualizarParticipante.php?id=<?= $evento['RfcParticipante'];?>"><span class="fa fa-pencil"></span></a></td>
                 <td>
-                    <input type="checkbox" id="ids" name="seleccionados[]" value="<?= $evento['RfcParticipante'].','.$evento['IdEvento']; ?>"/>
+                    <input type="checkbox" id="ids" name="seleccionados[]" value="<?= $evento['RfcParticipante'].','.$evento['IdEvento'].','.$evento['EmailParticipante']; ?>"/>
                 </td>
                 <td><input type="checkbox" name="enviados[]" value="<?= $evento['RfcParticipante']; ?>"></td>
                 <!-- <td><a href="enviar.php?id=<?= $evento['RfcParticipante']; ?>&correo=<?= $evento['EmailParticipante']; ?>"><span class="fa fa-envelope"></span></a></td> -->

@@ -18,6 +18,7 @@
 	$datos = explode(",", $valor); //se descompone la cadena rfc,id y se genera un ["rfc","id"]
 	$rfc=$datos[0];
 	$eventoid=$datos[1];
+	$fromemail=$datos[2];
 	echo "el RFC: ".$rfc. "<- ";
 	echo "el ID EVENTO: ".$eventoid. "<- ";
         
@@ -61,7 +62,7 @@
 	echo '<img src="'.$dir.basename($filename).'" /><hr/>';
 ////////////////////////////////////////
         require 'generarQC.php';
-        // require 'enviar.php';
+        require 'enviar.php';
 ///////////////////////////////////////
 
 }
