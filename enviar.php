@@ -32,19 +32,22 @@ try {
     $mail->Username   = 'supervisor';                     // SMTP username
     $mail->Password   = 'Spira2015/';                               // SMTP password
 
-    echo 'El email del participante a recibir es el: '.$row['EmailParticipante'];
-    echo 'El id del evento seleccionado es'.$eventoid;
-    echo 'El rfc es: '.$row['RfcParticipante'];
+    // echo 'El email del participante a recibir es el: '.$row['EmailParticipante'];
+    // echo 'El id del evento seleccionado es'.$eventoid;
+    // echo 'El rfc es: '.$row['RfcParticipante'];
+    echo "<script> alert('los datos son: '".$rfc."); </script>";
+    echo "<script> alert('los datos son: '".$eventoid."); </script>";
+    echo "<script> alert('los datos son: '".$fromemail."); </script>";
 
     //Recipients
     $mail->setFrom('supervisor@www.depfe.unam.mx', 'Depfe');
-     $mail->addAddress($row['EmailParticipante'], 'destino');     // Add a recipient
+     $mail->addAddress($fromemail, 'destino');     // Add a recipient
     // $mail->addAddress($row['EmailParticipante'], 'destino');     // Add a recipient
     $mail->addAddress('letiga@unam.mx', 'copia');     // Add a recipient
 
     // Attachments
     // $mail->AddAttachment('CONST_2022/Const-'.$row['IdEvento'].''.$row['RfcParticipante'].'.pdf');
-    $mail->AddAttachment('CONST_2022/Const-'.$eventoid.''.$row['RfcParticipante'].'.pdf');
+    $mail->AddAttachment('CONST_2022/Const-'.$eventoid.''.$rfc.'.pdf');
     //$mail->AddAttachment('enviar.php');
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
